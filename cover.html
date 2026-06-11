@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>מעיצוב לקוד — D2C × UXTRA</title>
+  <title>מעיצוב לקוד — UXTRA × Unit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -53,101 +53,62 @@
       content:""; position:absolute; inset:0; pointer-events:none;
       background-image:radial-gradient(circle, var(--dot) 1.6px, transparent 1.7px);
       background-size:34px 34px;
-      -webkit-mask-image:radial-gradient(76% 80% at 64% 42%, #000 26%, rgba(0,0,0,.5) 58%, transparent 92%);
-              mask-image:radial-gradient(76% 80% at 64% 42%, #000 26%, rgba(0,0,0,.5) 58%, transparent 92%);
+      -webkit-mask-image:radial-gradient(76% 80% at 50% 46%, #000 26%, rgba(0,0,0,.5) 58%, transparent 92%);
+              mask-image:radial-gradient(76% 80% at 50% 46%, #000 26%, rgba(0,0,0,.5) 58%, transparent 92%);
       opacity:.9;
     }
 
-    /* ═══════ COVER — UXTRA × Unit co-brand lockup ═══════ */
-    /* two transparent logos centered on the canvas; the torq gradient
-       + dot-grid show through behind the marks. */
-    .lockup{
-      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-      display:flex; align-items:center; justify-content:center;
-      gap:96px; direction:ltr; z-index:2;
+    /* ═══════ CO-BRAND COVER — UXTRA × Unit ═══════ */
+    .cover{
+      position:absolute; inset:0; z-index:2;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:0; text-align:center;
     }
-    .lockup .uxtra{ height:188px; width:auto; display:block;
-      filter:drop-shadow(0 0 72px rgba(128,151,255,.32)); }
-    .lockup .unit{ height:130px; width:auto; display:block;
-      filter:drop-shadow(0 0 56px rgba(235,239,255,.18)); }
+
+    /* mono eyebrow label */
+    .cover-eyebrow{
+      font-family:'IBM Plex Mono', monospace; font-weight:500;
+      font-size:23px; letter-spacing:.42em; text-transform:uppercase;
+      color:var(--cyan); direction:ltr;
+      display:flex; align-items:center; gap:18px; margin-bottom:96px;
+    }
+    .cover-eyebrow .bar{ width:48px; height:2px; background:var(--cyan); box-shadow:0 0 16px var(--cyan); }
+
+    /* logo lockup */
+    .lockup{
+      display:flex; align-items:center; justify-content:center;
+      gap:84px; direction:ltr;
+    }
+    .lockup .uxtra{ height:138px; width:auto; display:block;
+      filter:drop-shadow(0 0 64px rgba(128,151,255,.32)); }
+    .lockup .unit{ height:96px; width:auto; display:block;
+      filter:drop-shadow(0 0 48px rgba(235,239,255,.18)); }
+
+    /* the × divider between marks */
     .lockup .cross{
-      position:relative; width:140px; height:160px; flex-shrink:0;
+      position:relative; width:120px; height:120px; flex-shrink:0;
       display:flex; align-items:center; justify-content:center;
     }
     .lockup .cross::before{
       content:""; position:absolute; left:50%; top:50%;
-      width:1px; height:160px; transform:translate(-50%,-50%);
+      width:1px; height:120px; transform:translate(-50%,-50%);
       background:linear-gradient(var(--line), rgba(255,255,255,.28), var(--line));
     }
     .lockup .cross span{
       font-family:'Almoni Tzar', sans-serif; font-weight:300;
-      font-size:80px; line-height:1; color:var(--ink-mute);
-      background:var(--bg-1); padding:0 16px; position:relative; z-index:1;
+      font-size:64px; line-height:1; color:var(--ink-mute);
+      background:var(--bg-1); padding:0 14px; position:relative; z-index:1;
     }
-    .cover-label{
-      position:absolute; top:12%; left:50%; transform:translateX(-50%); z-index:4;
-      font-family:'Almoni Tzar', sans-serif; font-size:24px;
-      letter-spacing:.24em; text-transform:uppercase; color:var(--ink-mute);
-      white-space:nowrap; direction:ltr;
-    }
+
+    /* sub-line */
     .cover-sub{
-      position:absolute; top:16%; left:50%; transform:translateX(-50%); z-index:4;
-      font-family:'Almoni Tzar', sans-serif; font-weight:500; font-size:52px;
-      color:var(--ink-soft); white-space:nowrap; text-align:center; line-height:1;
-    }
-
-    /* ═══════ HERO (legacy) ═══════ */
-    .hero {
-      position:absolute; inset:0; z-index:2;
-      display:flex; flex-direction:column; justify-content:center;
-      padding:0 150px;
-    }
-
-    .eyebrow{
       font-family:'Almoni Tzar', sans-serif; font-weight:500;
-      font-size:24px; letter-spacing:.28em; text-transform:uppercase;
-      color:var(--cyan); display:flex; align-items:center; gap:16px;
-      margin-bottom:44px; direction:ltr;
+      font-size:54px; line-height:1.28; color:var(--ink-soft);
+      margin-top:104px; max-width:1100px;
     }
-    .eyebrow .bar{ width:54px; height:3px; background:var(--cyan); box-shadow:0 0 16px var(--cyan); }
+    .cover-sub b{ color:var(--ink); font-weight:700; }
 
-    .hero-title{
-      font-family:'Almoni Tzar', sans-serif; font-weight:900;
-      font-size:360px; line-height:.86; letter-spacing:0;
-      color:var(--ink);
-    }
-    .hero-title .accent{
-      color:var(--cyan);
-      text-shadow:0 0 60px rgba(143,245,255,.45);
-    }
-
-    .hero-sub{
-      font-family:'Almoni Tzar', sans-serif; font-weight:500;
-      font-size:55.2px; line-height:1.32; color:var(--ink-soft);
-      max-width:1000px; margin-top:52px;
-    }
-
-    /* presenter profiles */
-    .profiles{ display:flex; gap:28px; margin-top:88px; }
-    .profile{
-      display:flex; align-items:center; gap:20px;
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--line);
-      border-radius:22px; padding:16px 30px 16px 16px;
-      backdrop-filter:blur(8px);
-    }
-    .profile__avatar{
-      width:86px; height:86px; border-radius:50%; overflow:hidden;
-      flex-shrink:0; position:relative;
-      box-shadow:0 0 0 2px rgba(143,245,255,.25);
-    }
-    .profile__avatar img{ position:absolute; display:block; }
-    .profile__avatar--daniel img{ width:136.61%; height:136.61%; left:-19.63%; top:-14.76%; }
-    .profile__avatar--hani img{ width:112%; height:112%; left:-6%; top:-6%; object-fit:cover; }
-    .profile__name{ font-weight:700; font-size:48px; line-height:1.05; color:var(--ink); }
-    .profile__role{ font-family:'Almoni Tzar', sans-serif; font-size:15px; letter-spacing:.12em; color:var(--ink-mute); text-transform:uppercase; margin-top:4px; direction:ltr; text-align:right; }
-
-    /* ═══════ Footer chrome / nav ═══════ */
+    /* ── Footer chrome / nav ── */
     .nav-bar{
       position:fixed; bottom:0; left:0; right:0; height:64px;
       display:flex; align-items:center; justify-content:center;
@@ -173,15 +134,17 @@
 
 <div class="slides-container">
   <div class="slide active" data-slide="0">
-    <div class="slide-inner" id="s1-inner">
-      <!-- mono eyebrow label -->
-      <div class="cover-label">Design&nbsp;to&nbsp;Code — UXTRA</div>
-      <div class="cover-sub">מעיצוב לקוד ותהליכי עבודה עם AI</div>
-      <!-- co-brand lockup: UXTRA × Unit -->
-      <div class="lockup">
-        <img class="uxtra" src="assets/uxtra-logo.svg" alt="UXTRA" />
-        <span class="cross"><span>×</span></span>
-        <img class="unit" src="assets/unit-logo-white.svg" alt="Unit" />
+    <div class="slide-inner">
+      <div class="cover">
+        <div class="cover-eyebrow"><span class="bar"></span>Design&nbsp;to&nbsp;Code<span class="bar"></span></div>
+
+        <div class="lockup">
+          <img class="uxtra" src="assets/uxtra-logo.svg" alt="UXTRA" />
+          <span class="cross"><span>×</span></span>
+          <img class="unit" src="assets/unit-logo-white.svg" alt="Unit" />
+        </div>
+
+        <div class="cover-sub">מעיצוב לקוד ותהליכי עבודה עם <b>AI</b></div>
       </div>
     </div>
   </div>
@@ -189,8 +152,8 @@
 
 <!-- Footer chrome -->
 <nav class="nav-bar">
-  <span class="live"><span class="dot"></span>D2C × UXTRA</span>
-  <a href="class-2.html" class="nav-home">
+  <span class="live"><span class="dot"></span>UXTRA × UNIT</span>
+  <a href="index.html" class="nav-home">
     <svg viewBox="0 0 16 16"><path d="M8 1.4L1 7v7.6h5V10h4v4.6h5V7L8 1.4z"/></svg>
     כל השיעורים
   </a>
